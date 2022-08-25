@@ -1,0 +1,230 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(./assets/home.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: 'MedievalSharp', cursive;
+  font-size: 24px;
+  transition: all 0.3s;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: 40px 20px;
+}
+
+.ancients-container {
+  width: 100%;
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.ancient,
+.deck,
+.card {
+  height: 305px;
+  margin: 0 20px;
+  flex: 0 0 235px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(158, 201, 40, 0.3), 10px 10px 5px rgba(24, 18, 30, 0.8);
+}
+
+.ancient {
+  border-radius: 10px;
+  cursor: pointer;
+  filter: brightness(0.8);
+  transition: all 0.5s;
+}
+
+.ancient:hover,
+.deck:hover {
+  filter: brightness(1);
+  transform: scale(1.1);
+  z-index: 999;
+}
+
+.ancient.active {
+  filter: brightness(1);
+  transform: scale(1.1);
+  box-shadow: 0px 0px 20px rgba(188, 43, 74, 0.6), 10px 10px 5px rgba(24, 18, 30, 0.8);
+}
+
+.levels-container,
+.roll-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.levels-container {
+  position: relative;
+}
+
+.level,
+.roll {
+  width: 150px;
+  margin: 10px 0;
+  padding: 5px 20px;
+  background-color: #874db7;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: 'MedievalSharp', cursive;
+  font-size: 20px;
+  color: #282424;
+  border-radius: 3px;
+  box-shadow: 0px 0px 20px rgba(158, 201, 40, 0.3), 10px 10px 5px rgba(24, 18, 30, 0.8);
+  transition: all 0.5s;
+}
+
+.roll {
+  margin-top: 30px;
+  background-color: #cc406c;
+}
+
+.level:hover,
+.roll:hover {
+  background-color: #9ec928;
+}
+
+.level.active {
+  background-color: #9ec928;
+  box-shadow: 0px 0px 20px rgba(188, 43, 74, 0.6), 10px 10px 5px rgba(24, 18, 30, 0.8);
+}
+
+.section-container {
+  width: 100%;
+  visibility: hidden;
+}
+
+.stage-container {
+  width: 100%;
+  max-width: 450px;
+  padding: 0 20px;
+  margin: auto;
+}
+
+.stage {
+  margin: 10px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.stage.active {
+  opacity: 0.5;
+  filter: blur(1px);
+}
+
+.stage.active .stage-header {
+  color: #30000f;
+}
+
+.stage-header {
+  flex: 1 0 220px;
+  text-align: center;
+  color: #874db7;
+  text-shadow: 0px 0px 20px rgba(158, 201, 40, 0.3), 5px 5px 5px rgba(24, 18, 30, 0.8);
+}
+
+.counter-container {
+  padding: 5px 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(135, 77, 183, 0.3);
+  border-radius: 15px;
+  box-shadow: 0px 0px 5px 2px rgba(135, 77, 183, 0.3);
+
+}
+
+.count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 20px rgba(158, 201, 40, 0.3), 5px 5px 5px rgba(24, 18, 30, 0.8);
+}
+
+.counter-container .count:nth-child(1) {
+  background-color: #9ec928;
+}
+
+.counter-container .count:nth-child(2) {
+  background-color: #cc406c;
+}
+
+.counter-container .count:nth-child(3) {
+  background-color: #4f2bff;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+  gap: 20px;
+}
+
+.deck,
+.card {
+  height: 292px;
+  flex-basis: 200px;
+}
+
+.card {
+  visibility: hidden;
+}
+
+.deck {
+  background-image: url(./assets/mythicCardBackground.png);
+  cursor: pointer;
+  filter: brightness(0.8);
+  transition: filter 0.5s, transform 0.5s;
+}
+
+.message {
+  position: absolute;
+  bottom: -100px;
+  min-width: max-content;
+  padding: 20px;
+  text-align: center;
+  background: rgba(158, 201, 40, 0.3);
+  border-radius: 10px;
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.6);
+}
