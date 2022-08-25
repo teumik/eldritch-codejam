@@ -587,11 +587,6 @@ function shuffle(array) {
   return result;
 }
 
-// Matrix
-
-function getMatrixDeck(ancient) {
-}
-
 // Roll or Die
 
 globalThis.addEventListener('click', getRoll);
