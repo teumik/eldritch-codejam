@@ -794,12 +794,13 @@ function popDeck() {
     deck.style.visibility = 'hidden';
   }
 
-  card.style.visibility = 'visible';
+  // card.style.visibility = 'visible';
 
   // test onload
   const img = new Image;
   img.src = pop.cardFace;
   img.onload = () => {
+    card.style.visibility = 'visible';
     card.style.backgroundImage = `url('${img.src}')`;
   };
   // test onload
