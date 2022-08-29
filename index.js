@@ -763,7 +763,7 @@ function popDeck() {
 
   const pop = fullDeck.pop();
   const color = pop.color;
-  const img = pop.cardFace;
+  // const img = pop.cardFace;
 
   if (firstStage.length) {
     counter.firstStage[color]--;
@@ -795,7 +795,16 @@ function popDeck() {
   }
 
   card.style.visibility = 'visible';
-  card.style.backgroundImage = `url('${img}')`;
+
+  // test onload
+  const img = new Image;
+  img.src = pop.cardFace;
+  img.onload = () => {
+    card.style.backgroundImage = `url('${img.src}')`;
+  };
+  // test onload
+
+  // card.style.backgroundImage = `url('${img}')`;
 
   console.log('Card on the table:', pop);
 }
